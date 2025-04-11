@@ -1,0 +1,334 @@
+/********* FONTS *********/
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Kanit:wght@900&display=swap');
+
+/********* BODY *********/
+/********* GLOBAL SETTINGS *********/
+body {
+    font-family: "Barlow", sans-serif;
+    line-height: 1.7;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: red;
+}
+
+/********* NAVBAR *********/
+.navbar {
+    background-color: white
+}
+
+.navbar-brand img {
+    width: auto;
+    height: 60px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.1);
+}
+
+/* Toggler Button */
+.navbar-toggler {
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.navbar-toggler-icon {
+    width: 24px;
+    height: 24px;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="%23ffffff" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba%281,1,1,0.7%29" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+/********* NAVBAR LINKS *********/
+.navbar-nav {
+    gap: 20px;
+}
+
+.nav-link {
+    color: #000000;
+    font-weight: 600;
+    padding: 5px 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #65000B;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+.nav-link :active{
+    color: #65000B ;
+}
+/********* CUSTOM MENU OVERLAY *********/
+.custom-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #65000B;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: scale(1.05);
+    opacity: 0;
+}
+
+.custom-menu-overlay.active {
+    display: flex;
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Custom Menu Items */
+.menu-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.menu-link {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.menu-link:hover {
+    color: black;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/********* RESPONSIVENESS *********/
+@media (min-width: 769px) {
+    .custom-menu-overlay {
+        display: none !important;
+    }
+}
+
+/********* BANNER *********/
+/* BANNER SECTION */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 80vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    animation: zoomInOut 6s ease-in-out infinite alternate; 
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); 
+    z-index: 0;
+}
+
+/* ANIMATIONS */
+@keyframes zoomInOut {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+ 
+/********** TITLE **********/
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    width: 100%; 
+    background-color: transparent; 
+  }
+  
+
+  .main-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    margin: 0;
+    padding: 20px 0;
+    background-color: #65000B; 
+    width: 100%; 
+    box-sizing: border-box; 
+    text-align: center;
+  }
+  
+  .poster {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    padding: 20px; 
+    box-sizing: border-box; 
+    object-fit: cover;
+  }
+  
+  .second-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 10px;
+  }
+  
+
+  .section-description {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: black;
+    max-width: 600px;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+/********** TITLE **********/
+/* Info Box Section */
+.info-section {
+    display: flex;
+    justify-content: center;  
+    align-items: center;      
+    height: 50vh;            
+}
+
+.info-box {
+    background: rgba(0, 0, 0, 0.7); 
+    padding: 40px; 
+    border-radius: 20px;
+    text-align: center;
+    width: 500px; 
+    color: white;
+    font-size: 22px; 
+    font-weight: bold;
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    gap: 20px; 
+}
+
+.whatsapp-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 18px 30px;
+    background: #25d366;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: 0.3s ease;
+    width: 100%;
+    max-width: 400px;
+}
+
+.whatsapp-button img {
+    width: 28px;
+    height: 28px;
+}
+
+.whatsapp-button:hover {
+    background: #1ebe5d;
+    transform: scale(1.05);
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 768px) {
+    .info-box {
+        width: 90%;
+        padding: 20px; 
+    }
+
+    .whatsapp-button {
+        width: 100%;
+        max-width: none; 
+    }
+}
+
+/********** WHY SKIM **********/
+.whyskim-section {
+    padding: 40px;
+    background-color: #fff; 
+    color: #333; 
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #65000B; 
+    margin-bottom: 30px;
+}
+
+.whyskim-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+.whyskim-item {
+    background-color: #fff; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whyskim-item:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+@media (max-width: 768px) {
+    .whyskim-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .section-title {
+        font-size: 2rem; 
+    }
+    .whyskim-item {
+        padding: 15px; 
+    }
+}
